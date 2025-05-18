@@ -6,6 +6,7 @@ class TaskManagerUser(HttpUser):
     token = None
 
     def on_start(self):
+        #Создадим пользователя
         self.client.post("/users/", json={
             "username": f"testuser{random.randint(1, 1000)}",
             "email": f"test{random.randint(1, 1000)}@example.com",
